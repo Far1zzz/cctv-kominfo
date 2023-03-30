@@ -1,45 +1,19 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <h1>TESTING AJAH</h1>
-      <div className="video">
-        <iframe
-          title="no"
-          src="https://g3.ipcamlive.com/player/player.php?alias=641b4c088bb4e"
-          frameBorder={"none"}
-          allowFullScreen={true}
-        />
-        <iframe
-          title="no"
-          src="https://g3.ipcamlive.com/player/player.php?alias=641b4e17e90ea"
-          frameBorder={"none"}
-          allowFullScreen={true}
-        />
-        <iframe
-          title="no"
-          src="https://g3.ipcamlive.com/player/player.php?alias=642258a770fc5"
-          frameBorder={"none"}
-          allowFullScreen={true}
-        />
-        <iframe
-          title="no"
-          src="https://g3.ipcamlive.com/player/player.php?alias=64225b120bd3e"
-          frameBorder={"none"}
-          allowFullScreen={true}
-        />
-      </div>
-      <div className="video">
-        <iframe
-          title="no"
-          src="https://g3.ipcamlive.com/player/player.php?alias=64225cb141405"
-          frameBorder={"none"}
-          allowFullScreen={true}
-        />
-      </div>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
