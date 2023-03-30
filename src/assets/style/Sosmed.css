@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.item-sosmed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.item-sosmed img {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.title-sosmed {
+  color: #d74141;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 576px) {
+  .item-sosmed img {
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .title-sosmed {
+    display: none;
+  }
+}
