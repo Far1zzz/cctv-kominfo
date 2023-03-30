@@ -1,21 +1,13 @@
 import React from "react";
 import "../assets/style/Content.css";
-import ModalContent from "./ModalContent";
+import SingleContent from "./SingleContent";
 
 const Content = () => {
   return (
     <>
       <div className="container-cctv">
         <div className="wrapper">
-          <ModalContent>
-            <img
-              src="https://cdn.discordapp.com/attachments/1082225691044626442/1085404022917304350/CCTV_ONLINE.png"
-              alt="none"
-            />
-            <div className="detail-cctv">
-              <b>PEMKAB 1</b>
-            </div>
-          </ModalContent>
+          <SingleContent />
           <div className="item-cctv">
             <img
               src="https://cdn.discordapp.com/attachments/1082225691044626442/1085404022917304350/CCTV_ONLINE.png"
