@@ -8,7 +8,7 @@ const Content = () => {
   const getCctv = async () => {
     const { data } = await axios.get(`${process.env.REACT_APP_URL}/cctv`);
     setDataCctv(data);
-    console.log(data);
+    // console.log(data);
   };
 
   useEffect(() => {
