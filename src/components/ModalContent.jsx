@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Fade, makeStyles } from "@material-ui/core";
 import Modal from "@mui/material/Modal";
+import axios from "axios";
 
 const useStyle = makeStyles((theme) => ({
   modal: {
@@ -19,11 +20,21 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const ModalContent = ({ children }) => {
+const ModalContent = ({ children, id }) => {
   const classes = useStyle();
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [iframe, setIframe] = useState();
+
+  const getIframe = async () => {
+    const { data } = await axios.get(`${process.env.REACT_APP_URL}/cctv/${id}`);
+    setIframe(data);
+  };
+
+  useEffect(() => {
+    getIframe();
+  }, []);
 
   return (
     <>
@@ -38,16 +49,18 @@ const ModalContent = ({ children }) => {
         aria-describedby="modal-modal-description"
       >
         <Fade in={open}>
-          <div className={classes.paper}>
-            <iframe
-              style={{ width: "100%", height: "100%", borderRadius: "5px" }}
-              title="no"
-              src="https://g3.ipcamlive.com/player/player.php?alias=641b4c088bb4e"
-              frameBorder={"none"}
-              allowFullScreen={true}
-              allow="autoplay"
-            />
-          </div>
+          {iframe && (
+            <div className={classes.paper}>
+              <iframe
+                style={{ width: "100%", height: "100%", borderRadius: "5px" }}
+                title="no"
+                src={iframe.url_media}
+                frameBorder={"none"}
+                allowFullScreen={true}
+                allow="autoplay"
+              />
+            </div>
+          )}
         </Fade>
       </Modal>
     </>

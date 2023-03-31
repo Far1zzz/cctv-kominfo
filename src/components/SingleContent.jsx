@@ -1,15 +1,15 @@
 import React from "react";
 import ModalContent from "./ModalContent";
 
-const SingleContent = () => {
+const SingleContent = ({ id, lokasi, url_media }) => {
   return (
-    <ModalContent>
+    <ModalContent id={id}>
       <img
         src="https://cdn.discordapp.com/attachments/1082225691044626442/1085404022917304350/CCTV_ONLINE.png"
         alt="none"
       />
       <div className="detail-cctv">
-        <b>PEMKAB 1</b>
+        <h6>{lokasi}</h6>
       </div>
     </ModalContent>
   );

@@ -13,6 +13,7 @@
 }
 
 .item-cctv {
+  cursor: pointer;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -29,6 +30,8 @@
   object-fit: contain;
 }
 .detail-cctv {
+  text-transform: uppercase;
+  padding: 0px 0px 0px 2.5px;
   border: 1px solid white;
   width: 100%;
 }
